@@ -24,6 +24,9 @@ func ModifyURL(url string) string {
 		return fmt.Sprintf("http://127.0.0.1%s", url)
 	}
 
+	if strings.HasPrefix(url, "socks5://") {
+		return url
+	}
 	return fmt.Sprintf("http://%s", url)
 }
 
